@@ -3,4 +3,5 @@
 * TEPID_git - modified TEPID pipeline and its results on B.napus samples and A.thaliana validation
 * SPLITREADER_git - modified SPLITREADER pipeline and its results on B.napus samples and A.thaliana validation
 * map_to_reference.sh - map fastq files to the reference fasta
-* benchmark - SPLITREADER, TEPID and TIF comparison on A.thaliana samples
+* benchmark_ins_pos - SPLITREADER, TEPID and TIF comparison on A.thaliana samples
+* TE_correspond - match names from new and old annotation of Bnapus
