@@ -1,0 +1,32 @@
+#! /usr/bin/env python
+
+if __name__ == "__main__":
+    from argparse import ArgumentParser
+    import pkg_resources
+    import tepid.tepid
+    import random
+    import string
+
+    # version = pkg_resources.require("TEPID")[0].version
+
+    parser = ArgumentParser(description='TEPID -- refine TE insertion and deletion calls')
+    # parser.add_argument('--version', action='version', version='%(prog)s '+str(version))
+    parser.add_argument('-k', '--keep', help='keep all intermediate files', action='store_true', required=False, default=False)
+    parser.add_argument('-i', '--insertions', help='File containing collapsed TE insertions for all samples in population', required=False, default=False)
+    parser.add_argument('-d', '--deletions', help='File containing collapsed TE deletions for all samples in population', required=False, default=False)
+    parser.add_argument('-p', '--proc', help='number of processors', required=False, default=1, type=int)
+    parser.add_argument('-t', '--te', help='TE annotation bedfile', required=True)
+    parser.add_argument('-n', '--name', help='sample name', required=True)
+    parser.add_argument('-c', '--conc', help='bam file from bowtie2', required=True)
+    parser.add_argument('-s', '--split', help='split reads bam file from yaha', required=True)
+    parser.add_argument('-a', '--all_samples', help='List of all sample names', required=True)
+    options = parser.parse_args()
+
+    # generate a unique string prefix for the intermediate files
+    options.prefix = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(6)) + "_"
+
+    if options.insertions is False and options.deletions is False:
+        import sys
+        sys.exit("Error -- you have not supplied an insertions or deletions file")
+    else:
+        tepid.tepid.refine(options)

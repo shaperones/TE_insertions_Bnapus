@@ -1,0 +1,5 @@
+A05	Gmove	mRNA	185755	192589	747	+	.	ID=A05p00360.1_BnaDAR;Name=A05p00360.1_BnaDAR;start=1;stop=1;cds_size=747;model_size=747;exons=2
+A05	Gmove	mRNA	32777789	32794255	4239	+	.	ID=A05p29650.1_BnaDAR;Name=A05p29650.1_BnaDAR;start=1;stop=0;cds_size=471;model_size=471;exons=3
+C06	Gmove	mRNA	42892072	42893239	107.4	-	.	ID=C06p41920.1_BnaDAR;Name=C06p41920.1_BnaDAR;start=1;stop=1;cds_size=1074;model_size=1168;exons=1
+C08	Gmove	mRNA	10115649	10116291	15.9	+	.	ID=C08p08650.1_BnaDAR;Name=C08p08650.1_BnaDAR;start=1;stop=1;cds_size=159;model_size=643;exons=1
+C09	Gmove	mRNA	22165126	22166054	248.889	-	.	ID=C09p28320.1_BnaDAR;Name=C09p28320.1_BnaDAR;start=1;stop=1;cds_size=336;model_size=336;exons=4

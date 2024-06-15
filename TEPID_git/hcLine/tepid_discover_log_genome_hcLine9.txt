@@ -1,0 +1,7 @@
+Sample genome_hcLine9
+Start time Wed Apr 17 02:41:01 2024
+Using TE annotation at /home/alatypova/workspace_thaliana/TE_sequence/TAIR10_TEPID.bed
+mean insert size = 260 bp, standard deviation = 72 bp
+coverage = 21x
+read length = 149 bp
+tepid-discover finished normally at Wed Apr 17 02:43:34 2024

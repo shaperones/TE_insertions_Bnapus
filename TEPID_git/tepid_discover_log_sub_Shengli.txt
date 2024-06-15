@@ -1,0 +1,7 @@
+Sample sub_Shengli
+Start time Thu Mar 28 23:19:32 2024
+Using TE annotation at /home/alatypova/workspace_napus/TE_sequence/DARMOR_ANTARES_all_elements_TEPID.bed
+mean insert size = 287 bp, standard deviation = 37 bp
+coverage = 46x
+read length = 146 bp
+tepid-discover finished normally at Thu Mar 28 23:36:50 2024

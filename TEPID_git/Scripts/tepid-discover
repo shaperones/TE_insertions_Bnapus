@@ -1,0 +1,46 @@
+#! /usr/bin/env python
+
+if __name__ == "__main__":
+    from argparse import ArgumentParser
+    import pkg_resources
+    import os
+    import tepid.tepid
+    import random
+    import string
+
+    # version = pkg_resources.require("TEPID")[0].version
+
+    parser = ArgumentParser(description='TEPID -- transposable element polymorphism identification')
+    group = parser.add_mutually_exclusive_group()
+    # parser.add_argument('--version', action='version', version='%(prog)s '+str(version))
+    parser.add_argument('-k', '--keep', help='keep all intermediate files', action='store_true', required=False, default=False)
+    group.add_argument('-d', '--deletions', help='find deletions only', action='store_true', required=False, default=False)
+    group.add_argument('-i', '--insertions', help='find insertions only', action='store_true', required=False, default=False)
+    parser.add_argument('--strict', help='Report high-confidence variants only', required=False, default=False, action='store_true')
+    parser.add_argument('--mask', help='Mask chromosomes in comma separated list or file', required=False, type=str, default='')
+    parser.add_argument('-D', '--discordant', help='Supply discordant reads bam file', required=False, default=False)
+    parser.add_argument('-p', '--proc', help='number of processors', required=False, default=1, type=int)
+    parser.add_argument('-n', '--name', help='sample name', required=True)
+    parser.add_argument('-c', '--conc', help='bam file from bowtie2', required=True)
+    parser.add_argument('-s', '--split', help='split reads bam file from yaha', required=True)
+    parser.add_argument('-t', '--te', help='TE annotation bedfile', required=True)
+    parser.add_argument('--se', help="Run in single-end mode", required=False, default=False, action='store_true')
+    options = parser.parse_args()
+
+    if os.path.isfile(options.mask):
+        m = []
+        with open(options.mask, 'r') as infile:
+            for line in infile:
+                line = line.strip("\n").split(',')
+                m += line
+        options.mask = ",".join(m)
+    else:
+        pass
+
+    # generate a unique string prefix for the intermediate files
+    options.prefix = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(6)) + "_"
+
+    if options.se is False:
+        tepid.tepid.discover_pe(options)
+    else:
+        tepid.tepid.discover_se(options)

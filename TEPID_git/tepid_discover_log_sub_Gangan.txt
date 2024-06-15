@@ -1,0 +1,7 @@
+Sample sub_Gangan
+Start time Wed Mar 27 11:20:39 2024
+Using TE annotation at /home/alatypova/workspace_napus/TE_sequence/DARMOR_ANTARES_all_elements_TEPID.bed
+mean insert size = 286 bp, standard deviation = 43 bp
+coverage = 40x
+read length = 146 bp
+tepid-discover finished normally at Wed Mar 27 11:36:37 2024

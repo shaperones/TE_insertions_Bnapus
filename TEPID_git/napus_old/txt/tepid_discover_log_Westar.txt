@@ -1,0 +1,7 @@
+Sample Westar
+Start time Sat Mar  9 10:01:45 2024
+Using TE annotation at /home/alatypova/workspace_napus/TE_sequence/darmor_dante_ltr_for_insertions_TEPID.bed
+mean insert size = 294 bp, standard deviation = 53 bp
+coverage = 55x
+read length = 146 bp
+tepid-discover finished normally at Sat Mar  9 10:18:04 2024
